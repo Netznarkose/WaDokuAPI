@@ -200,6 +200,7 @@ task :picky_index do
   Bundler.require(:db, :picky)
 
   require_relative 'app/models/entry'
+  require_relative 'app/models/lemma'
   require_relative 'picky/indexes.rb'
   require_relative 'db/config'
 
