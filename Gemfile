@@ -8,7 +8,7 @@ gem "yajl-ruby", :require => 'yajl'
 gem 'parslet'
 
 group :development do
-  gem "pry"
+  gem "pry-byebug"
 end
 
 group :picky do
