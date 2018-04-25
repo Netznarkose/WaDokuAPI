@@ -1,3 +1,4 @@
+
 require 'spec_helper'
 
 describe WadokuSearch do
@@ -20,8 +21,15 @@ describe WadokuSearch do
     end
   end
 
+  describe "searching" do
+    it 'finds entries that includes katakan long vowels marks' do
+      options = {"mode"=>"fuzzy", "offset"=>0, "limit"=>"15", "format"=>"html", "captures"=>nil, "full_subentries"=>"true", "query"=>"アイエスディーエヌ"}
+      search = WadokuSearch.search(options['query'], options['limit'], options['offset'])
+      entries = Entry.all(id: search.ids)
+      binding.pry
+    end
+  end
 end
-
 describe Entry do
   it 'should generate tres' do
   end
