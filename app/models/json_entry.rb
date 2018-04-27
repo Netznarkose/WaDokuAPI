@@ -1,4 +1,5 @@
 #encoding: utf-8
+require 'pry-byebug'
 class JsonEntry
   def initialize entry
     @@grammar ||= WadokuGrammar.new
@@ -24,8 +25,9 @@ class JsonEntry
       elsif format == "plain" && @entry.definition_plain
         definition = @entry.definition_plain
       else
-        parsed = @@grammar.parse @entry.definition
-        definition = transformer.apply parsed
+        definition_with_warning = "<div style='color:red;'> BROKEN SYNTAX STYLE RULES</div> "
+        definition_with_warning.concat @entry.definition
+        definition = definition_with_warning
       end
 
       res = {

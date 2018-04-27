@@ -6,10 +6,7 @@ gem "sinatra", :require => "sinatra/base"
 gem "yajl-ruby", :require => 'yajl'
 
 gem 'parslet'
-
-group :development do
-  gem "pry-byebug"
-end
+gem "pry-byebug"
 
 group :picky do
   gem "picky"
